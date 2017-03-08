@@ -12,15 +12,12 @@ Docker para o Ambiente IW
 ```
 docker-compose build
 ```
-
-3. Inicir o Docker
+3. Iniciar o Docker
 ```
 docker-compose up -s
 ```
 4. Conecte no banco de dados pelo IP do Docker *(user:root pass:root)* e faça o dumping do banco do IW
-
 5. Mude o apontamento do dominio iemen.claro para o IP do Docker no arquivo hosts
-
 6. Acesse o IW no navegador pelo endereço http://iemen.claro
 
 *No Windows o IP = 192.168.99.100*
