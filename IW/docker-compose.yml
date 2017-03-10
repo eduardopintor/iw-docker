@@ -4,18 +4,21 @@ services:
   web:
     build: webserver
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
+      - 3306:3306
     volumes:
       - ./www:/var/www
-    links:
-      - db:db
+    extra_hosts:
+      - local:10.0.160.84
+  #   links:
+  #     - db:db
 
-  db:
-    image: "mysql:5.6"
-    volumes:
-      - ./mysql/data:/var/lib/mysql
-    ports:
-      - 3306:3306
-    environment:
-    - MYSQL_ROOT_PASSWORD=root
+  # db:
+  #   image: "mysql:5.6"
+  #   volumes:
+  #     - ./mysql/data:/var/lib/mysql
+  #   ports:
+  #     - 3306:3306
+  #   environment:
+  #   - MYSQL_ROOT_PASSWORD=root
